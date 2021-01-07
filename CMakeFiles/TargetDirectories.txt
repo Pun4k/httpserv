@@ -1,3 +1,0 @@
-/home/netrunner/Projects/httpserv/CMakeFiles/rebuild_cache.dir
-/home/netrunner/Projects/httpserv/CMakeFiles/edit_cache.dir
-/home/netrunner/Projects/httpserv/CMakeFiles/httpserv.dir

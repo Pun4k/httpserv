@@ -1,1 +1,0 @@
-/usr/bin/cc    CMakeFiles/httpserv.dir/main.c.o CMakeFiles/httpserv.dir/src/net/net.c.o  -o httpserv 
