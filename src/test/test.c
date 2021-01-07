@@ -4,8 +4,6 @@
 
 #include "../net/net.h"
 
-
-
 int test_one() {
     int listener = listen_net("0.0.0.0:7878");
     if (listener < 0) {
