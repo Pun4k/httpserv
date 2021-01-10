@@ -1,35 +1,8 @@
 #include "binarytree.h"
 
-static void set_value_(tree_node *node, vtype_tree_t tvalue, void *value);
-static void set_key_(tree_node *node, vtype_tree_t tkey, void *key);
-
-
-static tree_node *new_node_(vtype_tree_t tkey, vtype_tree_t tvalue, void *key, void *value) {
-    tree_node *node = (tree_node*)malloc(sizeof(tree_node));
-
-    set_key_(node, tkey, key);
-    set_value_(node, tvalue, value);
-
-    node->left = NULL;
-    node->right = NULL;
-    node->parent = NULL;
-
-    return node;
-}
-
-static void set_key_(tree_node *node, vtype_tree_t tkey, void *key) {
-    switch (tkey) {
-    case DECIMAL_ELEM:
-        node->data.key.decimal = (i64)key;
-        break;
-    case STRING_ELEM:
-        node->data.key.string = (u8*)key;
-        break;
-    default:
-        fprintf(stderr, "%s\n", "set_key_ func err: key != decimal or string");
-        break;
-    }
-}
+/*************/
+/*STATIC FUNC*/
+/*************/
 
 static void set_value_(tree_node *node, vtype_tree_t tvalue, void *value) {
     switch (tvalue) {
@@ -46,6 +19,33 @@ static void set_value_(tree_node *node, vtype_tree_t tvalue, void *value) {
     default:
         break;
     }
+}
+
+static void set_key_(tree_node *node, vtype_tree_t tkey, void *key) {
+    switch (tkey) {
+    case DECIMAL_ELEM:
+        node->data.key.decimal = (i64)key;
+        break;
+    case STRING_ELEM:
+        node->data.key.string = (u8*)key;
+        break;
+    default:
+        fprintf(stderr, "%s\n", "set_key_ func err: key != decimal or string");
+        break;
+    }
+}
+
+static tree_node *new_node_(vtype_tree_t tkey, vtype_tree_t tvalue, void *key, void *value) {
+    tree_node *node = (tree_node*)malloc(sizeof(tree_node));
+
+    set_key_(node, tkey, key);
+    set_value_(node, tvalue, value);
+
+    node->left = NULL;
+    node->right = NULL;
+    node->parent = NULL;
+
+    return node;
 }
 
 static void set_tree_(tree_node *node, vtype_tree_t tkey, vtype_tree_t tvalue, void *key, void *value) {
@@ -244,6 +244,10 @@ static void del_tree_th_(tree_node *node) {
     free(ptr);
 }
 
+/*************/
+/*EXTERN FUNC*/
+/*************/
+
 extern void *decimal(i64 x) {
     return (void*)x;
 }
@@ -263,7 +267,7 @@ extern Tree *new_tree(vtype_tree_t key, vtype_tree_t value) {
     case DECIMAL_ELEM: case STRING_ELEM:
         break;
     default: {
-        fprintf(stderr, "%s\n", "Key type not supported");
+        fprintf(stderr, "%s\n", "Key type doesnt supported");
         return NULL;
     }
     }
@@ -272,7 +276,7 @@ extern Tree *new_tree(vtype_tree_t key, vtype_tree_t value) {
     case DECIMAL_ELEM: case STRING_ELEM: case REAL_ELEM:
         break;
     default: {
-        fprintf(stderr, "%s\n", "Value type not supported");
+        fprintf(stderr, "%s\n", "Value type doesnt supported");
         return NULL;
     }
     }

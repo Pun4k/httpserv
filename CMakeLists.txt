@@ -8,12 +8,13 @@ set(CMAKE_C_STANDARD 11)
 
 
 
-set(HEADER_FILES src/net/net.h src/http/http.h
+set(HEADER_FILES httpserv.h
+                src/net/net.h src/http/http.h
                 src/test/test.h
                 src/DataTypes/binary_tree/binarytree.h
                 src/DataTypes/hashtable/hashtab.h
 )
-set(SOURCE_FILES httpserv.c src/net/net.c
+set(SOURCE_FILES httpserv.c src/net/net.c src/http/http.c
                 src/test/test.c
                 src/DataTypes/binary_tree/binarytree.c
                 src/DataTypes/hashtable/hashtab.c

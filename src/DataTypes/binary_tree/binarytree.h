@@ -1,16 +1,18 @@
 #ifndef BINARY_TREE_H
 #define BINARY_TREE_H
 
-#include "stdint.h"
-#include "stdlib.h"
-#include "malloc.h"
-#include "stddef.h"
-#include "string.h"
-#include "stdbool.h"
+#include <stdint.h>
+#include <stdlib.h>
+#include <malloc.h>
+#include <stddef.h>
+#include <string.h>
+#include <stdbool.h>
 
 #define i32 int32_t
 #define i64 int64_t
 #define u8 uint8_t
+#define u32 uint32_t
+#define u64 uint64_t
 
 typedef enum {
     DECIMAL_ELEM,

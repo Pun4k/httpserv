@@ -1,9 +1,9 @@
 #ifndef HTTPSERV_NET
 #define HTTPSERV_NET
 
-#include "stddef.h"
-#include "stdint.h"
-#include "stdlib.h"
+#include <stddef.h>
+#include <stdint.h>
+#include <stdlib.h>
 
 #define u8 uint8_t
 #define u32 uint32_t

@@ -1,5 +1,11 @@
-/build
-/.vscode
-/CMakeFiles
+#IDE folders
 /.idea
+/.vscode
+
+#build folders
 /cmake-build-debug
+/CMakeFiles
+/build
+
+#html pages
+/pages
