@@ -1,6 +1,7 @@
 #ifndef BINARY_TREE_H
 #define BINARY_TREE_H
 
+#include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
 #include <malloc.h>

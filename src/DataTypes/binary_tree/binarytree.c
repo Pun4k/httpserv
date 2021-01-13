@@ -281,7 +281,7 @@ extern Tree *new_tree(vtype_tree_t key, vtype_tree_t value) {
     }
     }
 
-    Tree *tree = (Tree*)malloc(sizeof(tree));
+    Tree *tree = (Tree*)malloc(sizeof(*tree));
     tree->type.key = key;
     tree->type.value = value;
     tree->node = NULL;
